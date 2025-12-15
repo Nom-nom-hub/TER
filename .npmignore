@@ -1,0 +1,60 @@
+# Source files (users get compiled code only)
+src/
+tsconfig.json
+
+# Testing
+tests/
+jest.config.js
+__tests__/
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+
+# Documentation (bloat for npm users)
+docs/
+README_*.md
+*.md
+!README.md
+
+# Examples and templates
+examples/
+templates/
+
+# Language SDKs (not for npm users)
+go/
+python/
+java/
+ruby/
+rust/
+
+# Build and dev tools
+.github/
+.vscode/
+benchmarks/
+
+# Config and metadata
+.env*
+.ter*.json
+.jenkins-result
+jest.config.js
+
+# Root-level planning/release documents
+ANNOUNCEMENT_*.md
+CHECKLIST.md
+DEV.md
+GITHUB_RELEASE_*.md
+PHASE*.md
+PRODUCT_MEMO.md
+RC*.md
+REFERENCE_DEPLOYMENT.md
+RELEASE_NOTES_*.md
+SESSION_SUMMARY.md
+V1_SCOPE.md
+
+# Development dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
