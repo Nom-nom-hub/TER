@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ter-sdk",
-    version="0.1.0",
+    version="1.0.0-rc1",
     description="Typed Environment Runtime - Python SDK",
     author="",
     license="MIT",

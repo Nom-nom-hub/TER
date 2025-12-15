@@ -1,6 +1,6 @@
 {
   "name": "ter",
-  "version": "0.1.0",
+  "version": "1.0.0-rc1",
   "description": "Typed Environment Runtime - Contract-driven, typed, policy-aware environment system",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
