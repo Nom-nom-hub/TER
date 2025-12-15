@@ -1,0 +1,50 @@
+{
+  "name": "PostgreSQL Database",
+  "description": "PostgreSQL connection configuration",
+  "version": "1.0",
+  "variables": {
+    "DATABASE_URL": {
+      "type": "url",
+      "required": true,
+      "description": "PostgreSQL connection string (postgres://user:pass@host:port/dbname)"
+    },
+    "DB_HOST": {
+      "type": "string",
+      "required": true,
+      "description": "PostgreSQL server hostname"
+    },
+    "DB_PORT": {
+      "type": "int",
+      "default": 5432,
+      "required": false,
+      "description": "PostgreSQL server port"
+    },
+    "DB_USER": {
+      "type": "string",
+      "required": true,
+      "description": "PostgreSQL username"
+    },
+    "DB_PASSWORD": {
+      "type": "secret",
+      "required": true,
+      "description": "PostgreSQL password"
+    },
+    "DB_NAME": {
+      "type": "string",
+      "required": true,
+      "description": "PostgreSQL database name"
+    },
+    "DB_SSL": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "description": "Enable SSL for PostgreSQL connection"
+    },
+    "DB_POOL_SIZE": {
+      "type": "int",
+      "default": 10,
+      "required": false,
+      "description": "Connection pool size"
+    }
+  }
+}

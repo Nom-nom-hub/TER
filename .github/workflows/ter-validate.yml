@@ -1,0 +1,98 @@
+name: TER Environment Validation
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - '.env*'
+      - '.ter.json'
+      - '.ter-graph.json'
+      - '**.ts'
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - '.env*'
+      - '.ter.json'
+      - '.ter-graph.json'
+      - '**.ts'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run TER validation
+        id: ter_check
+        run: |
+          npm run ter:check
+          exit_code=$?
+          echo "validation_passed=$([ $exit_code -eq 0 ] && echo 'true' || echo 'false')" >> $GITHUB_OUTPUT
+          exit $exit_code
+
+      - name: Generate validation report
+        if: always()
+        run: npm run ter:report
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: ter-validation-report
+          path: ter-report.json
+
+      - name: Add validation summary
+        if: always()
+        run: |
+          echo "## Environment Validation Results" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.ter_check.outputs.validation_passed }}" == "true" ]; then
+            echo "✅ All environment variables validated successfully" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ Environment validation failed - see artifacts for details" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Comment PR with validation results
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const report = JSON.parse(fs.readFileSync('ter-report.json', 'utf8'));
+            
+            let comment = '## TER Environment Validation\n\n';
+            
+            if (report.valid) {
+              comment += '✅ **All validations passed**\n\n';
+            } else {
+              comment += '❌ **Validation failed**\n\n';
+              if (report.errors.length > 0) {
+                comment += '### Errors\n';
+                report.errors.forEach(err => {
+                  comment += `- ${err}\n`;
+                });
+              }
+              if (report.warnings.length > 0) {
+                comment += '\n### Warnings\n';
+                report.warnings.forEach(warn => {
+                  comment += `- ${warn}\n`;
+                });
+              }
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

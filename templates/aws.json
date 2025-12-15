@@ -1,0 +1,43 @@
+{
+  "name": "AWS Configuration",
+  "description": "Amazon Web Services credentials and configuration",
+  "version": "1.0",
+  "variables": {
+    "AWS_REGION": {
+      "type": "string",
+      "default": "us-east-1",
+      "required": false,
+      "description": "AWS region (us-east-1, eu-west-1, etc.)"
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "type": "secret",
+      "required": true,
+      "description": "AWS access key identifier"
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "type": "secret",
+      "required": true,
+      "description": "AWS secret access key"
+    },
+    "AWS_SESSION_TOKEN": {
+      "type": "secret",
+      "required": false,
+      "description": "AWS temporary session token (for STS)"
+    },
+    "AWS_S3_BUCKET": {
+      "type": "string",
+      "required": false,
+      "description": "Default S3 bucket name"
+    },
+    "AWS_DYNAMODB_TABLE": {
+      "type": "string",
+      "required": false,
+      "description": "Default DynamoDB table name"
+    },
+    "AWS_SQS_QUEUE_URL": {
+      "type": "url",
+      "required": false,
+      "description": "SQS queue URL"
+    }
+  }
+}

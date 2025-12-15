@@ -1,0 +1,94 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Go
+*.o
+*.a
+*.so
+.DS_Store
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+dist/
+bin/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+.env.prod
+.env.staging
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Test outputs
+coverage/
+.nyc_output/
+htmlcov/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Jenkins
+.jenkins-result
+
+# TER-specific
+*.ter-artifacts/
+validation-reports/

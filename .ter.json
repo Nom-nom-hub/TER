@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "variables": [
+    {
+      "name": "DATABASE_URL",
+      "type": "url",
+      "required": true,
+      "defaultValue": null,
+      "description": null,
+      "isSecret": false,
+      "policy": null
+    },
+    {
+      "name": "PORT",
+      "type": "int",
+      "required": false,
+      "defaultValue": 3000,
+      "description": null,
+      "isSecret": false,
+      "policy": null
+    },
+    {
+      "name": "NODE_ENV",
+      "type": "enum",
+      "required": false,
+      "defaultValue": "development",
+      "description": null,
+      "isSecret": false,
+      "policy": null,
+      "values": ["development", "production"]
+    },
+    {
+      "name": "API_KEY",
+      "type": "secret",
+      "required": true,
+      "defaultValue": null,
+      "description": null,
+      "isSecret": true,
+      "policy": null
+    }
+  ]
+}

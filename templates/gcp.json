@@ -1,0 +1,43 @@
+{
+  "name": "Google Cloud Platform",
+  "description": "GCP credentials and service configuration",
+  "version": "1.0",
+  "variables": {
+    "GOOGLE_PROJECT_ID": {
+      "type": "string",
+      "required": true,
+      "description": "GCP project ID"
+    },
+    "GOOGLE_CREDENTIALS": {
+      "type": "json",
+      "required": true,
+      "description": "GCP service account credentials (JSON)"
+    },
+    "GCP_REGION": {
+      "type": "string",
+      "default": "us-central1",
+      "required": false,
+      "description": "Default GCP region"
+    },
+    "GCLOUD_STORAGE_BUCKET": {
+      "type": "string",
+      "required": false,
+      "description": "Cloud Storage bucket name"
+    },
+    "GCLOUD_FIRESTORE_DATABASE": {
+      "type": "string",
+      "required": false,
+      "description": "Firestore database name"
+    },
+    "GCLOUD_PUBSUB_TOPIC": {
+      "type": "string",
+      "required": false,
+      "description": "Pub/Sub topic name"
+    },
+    "GCLOUD_RUN_SERVICE_URL": {
+      "type": "url",
+      "required": false,
+      "description": "Cloud Run service URL"
+    }
+  }
+}

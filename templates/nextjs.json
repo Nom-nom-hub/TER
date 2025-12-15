@@ -1,0 +1,49 @@
+{
+  "name": "Next.js Application",
+  "description": "Next.js full-stack configuration",
+  "version": "1.0",
+  "variables": {
+    "NODE_ENV": {
+      "type": "enum",
+      "values": ["development", "production"],
+      "default": "development",
+      "required": false,
+      "description": "Node.js environment"
+    },
+    "NEXT_PUBLIC_API_URL": {
+      "type": "url",
+      "required": true,
+      "description": "Public API base URL (accessible from browser)"
+    },
+    "API_URL": {
+      "type": "url",
+      "required": true,
+      "description": "Internal API base URL (server-side only)"
+    },
+    "DATABASE_URL": {
+      "type": "url",
+      "required": true,
+      "description": "Database connection string"
+    },
+    "JWT_SECRET": {
+      "type": "secret",
+      "required": true,
+      "description": "JWT signing secret"
+    },
+    "NEXTAUTH_SECRET": {
+      "type": "secret",
+      "required": false,
+      "description": "NextAuth.js secret for encryption"
+    },
+    "NEXTAUTH_URL": {
+      "type": "url",
+      "required": false,
+      "description": "NextAuth.js callback URL"
+    },
+    "VERCEL_URL": {
+      "type": "string",
+      "required": false,
+      "description": "Vercel deployment URL"
+    }
+  }
+}

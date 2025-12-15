@@ -1,0 +1,53 @@
+{
+  "name": "Express.js Application",
+  "description": "Express.js web server configuration",
+  "version": "1.0",
+  "variables": {
+    "NODE_ENV": {
+      "type": "enum",
+      "values": ["development", "production", "test", "staging"],
+      "default": "development",
+      "required": false,
+      "description": "Node.js environment"
+    },
+    "PORT": {
+      "type": "int",
+      "default": 3000,
+      "required": false,
+      "description": "Server port"
+    },
+    "HOST": {
+      "type": "string",
+      "default": "localhost",
+      "required": false,
+      "description": "Server hostname"
+    },
+    "LOG_LEVEL": {
+      "type": "enum",
+      "values": ["debug", "info", "warn", "error"],
+      "default": "info",
+      "required": false,
+      "description": "Logging level"
+    },
+    "CORS_ORIGIN": {
+      "type": "url",
+      "required": false,
+      "description": "CORS allowed origin"
+    },
+    "SESSION_SECRET": {
+      "type": "secret",
+      "required": true,
+      "description": "Express session secret"
+    },
+    "API_KEY": {
+      "type": "secret",
+      "required": false,
+      "description": "API authentication key"
+    },
+    "JWT_SECRET": {
+      "type": "secret",
+      "required": false,
+      "description": "JWT signing secret"
+    }
+  }
+}

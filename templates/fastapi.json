@@ -1,0 +1,60 @@
+{
+  "name": "FastAPI Application",
+  "description": "FastAPI Python web service configuration",
+  "version": "1.0",
+  "variables": {
+    "ENVIRONMENT": {
+      "type": "enum",
+      "values": ["development", "production", "staging"],
+      "default": "development",
+      "required": false,
+      "description": "Application environment"
+    },
+    "HOST": {
+      "type": "string",
+      "default": "0.0.0.0",
+      "required": false,
+      "description": "Server bind address"
+    },
+    "PORT": {
+      "type": "int",
+      "default": 8000,
+      "required": false,
+      "description": "Server port"
+    },
+    "LOG_LEVEL": {
+      "type": "enum",
+      "values": ["critical", "error", "warning", "info", "debug"],
+      "default": "info",
+      "required": false,
+      "description": "Logging level"
+    },
+    "DATABASE_URL": {
+      "type": "url",
+      "required": true,
+      "description": "Database connection URL"
+    },
+    "SECRET_KEY": {
+      "type": "secret",
+      "required": true,
+      "description": "Secret key for encryption"
+    },
+    "JWT_ALGORITHM": {
+      "type": "string",
+      "default": "HS256",
+      "required": false,
+      "description": "JWT algorithm"
+    },
+    "JWT_EXPIRATION": {
+      "type": "int",
+      "default": 3600,
+      "required": false,
+      "description": "JWT token expiration in seconds"
+    },
+    "CORS_ORIGINS": {
+      "type": "json",
+      "required": false,
+      "description": "CORS allowed origins (JSON array)"
+    }
+  }
+}

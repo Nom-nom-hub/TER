@@ -1,0 +1,43 @@
+{
+  "name": "MongoDB Database",
+  "description": "MongoDB connection configuration",
+  "version": "1.0",
+  "variables": {
+    "MONGODB_URI": {
+      "type": "url",
+      "required": true,
+      "description": "MongoDB connection string (mongodb://user:pass@host:port/dbname)"
+    },
+    "MONGODB_HOST": {
+      "type": "string",
+      "required": true,
+      "description": "MongoDB server hostname"
+    },
+    "MONGODB_PORT": {
+      "type": "int",
+      "default": 27017,
+      "required": false,
+      "description": "MongoDB server port"
+    },
+    "MONGODB_USER": {
+      "type": "string",
+      "required": false,
+      "description": "MongoDB username"
+    },
+    "MONGODB_PASSWORD": {
+      "type": "secret",
+      "required": false,
+      "description": "MongoDB password"
+    },
+    "MONGODB_DATABASE": {
+      "type": "string",
+      "required": true,
+      "description": "MongoDB database name"
+    },
+    "MONGODB_REPLICA_SET": {
+      "type": "string",
+      "required": false,
+      "description": "MongoDB replica set name"
+    }
+  }
+}

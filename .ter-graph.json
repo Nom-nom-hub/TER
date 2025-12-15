@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "environments": [
+    {
+      "name": "base",
+      "values": {
+        "DATABASE_URL": "postgres://localhost/db",
+        "PORT": "3000",
+        "LOG_LEVEL": "info"
+      }
+    },
+    {
+      "name": "local",
+      "extends": "base",
+      "path": ".env.example"
+    },
+    {
+      "name": "staging",
+      "extends": "base",
+      "values": {
+        "DATABASE_URL": "postgres://staging/db",
+        "PORT": "5432",
+        "LOG_LEVEL": "debug"
+      }
+    },
+    {
+      "name": "production",
+      "extends": "base",
+      "path": ".env.prod"
+    }
+  ]
+}
