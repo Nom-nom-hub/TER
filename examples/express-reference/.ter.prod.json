@@ -1,0 +1,52 @@
+{
+  "NODE_ENV": {
+    "type": "enum",
+    "values": ["production"],
+    "required": true
+  },
+  "PORT": {
+    "type": "int",
+    "minimum": 1,
+    "maximum": 65535,
+    "default": 8080
+  },
+  "DATABASE_URL": {
+    "type": "url",
+    "required": true
+  },
+  "REDIS_URL": {
+    "type": "url",
+    "required": true
+  },
+  "API_KEY": {
+    "type": "secret",
+    "required": true
+  },
+  "LOG_LEVEL": {
+    "type": "enum",
+    "values": ["error", "warn"],
+    "required": true
+  },
+  "CORS_ORIGIN": {
+    "type": "url",
+    "required": true
+  },
+  "JWT_SECRET": {
+    "type": "secret",
+    "required": true
+  },
+  "RATE_LIMIT_MAX": {
+    "type": "int",
+    "minimum": 1,
+    "maximum": 10000,
+    "default": 100
+  },
+  "TLS_CERT_PATH": {
+    "type": "string",
+    "required": true
+  },
+  "TLS_KEY_PATH": {
+    "type": "string",
+    "required": true
+  }
+}
