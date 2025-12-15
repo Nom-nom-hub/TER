@@ -344,8 +344,9 @@ A: Use environment-specific `.env` files and contracts, or environment inheritan
 | Specification | ✅ Complete |
 | Tests (348+) | ✅ Passing |
 
-**Version**: 1.0.0-rc1  
-**Release**: Q1 2025
+**Version**: 1.0.0-rc2  
+**Release**: Q1 2025  
+**npm**: `npm install ter`
 
 ---
 
