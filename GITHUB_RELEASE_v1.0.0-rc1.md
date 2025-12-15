@@ -105,7 +105,7 @@ We've included a complete Express.js application (`examples/express-reference/`)
 
 ### Node.js
 ```bash
-npm install ter
+npm install @blazeinstall/ter@rc1
 ```
 
 ### Python
@@ -146,7 +146,7 @@ PORT=3000
 
 ### 3. Validate
 ```bash
-npx ter check --env .env --contract .ter.json
+npx @blazeinstall/ter check --env .env --contract .ter.json
 ```
 
 ### 4. Use in Code

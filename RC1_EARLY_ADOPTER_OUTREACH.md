@@ -40,7 +40,7 @@ If you've ever:
 
 ### Installation
 ```bash
-npm install ter
+npm install @blazeinstall/ter@rc1
 # or
 pip install ter-sdk
 # or
